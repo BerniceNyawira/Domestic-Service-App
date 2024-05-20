@@ -1,0 +1,245 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f6f6f6;
+    color: #12285e;
+}
+
+/* Navigation */
+nav {
+    background-color: #12285e;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.navigation-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.navigation-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navigation-links a:hover {
+    color: #31cbd1;
+}
+
+/* Main Content */
+.main-content {
+    padding: 50px;
+    text-align: center;
+}
+
+.features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.feature {
+    flex-basis: calc(33.33% - 20px);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-10px);
+}
+
+.feature h3 {
+    margin-bottom: 20px;
+    color: #12285e;
+}
+
+.feature p {
+    color: #666;
+}
+
+/* Sub-Main Section */
+.sub-main {
+    padding: 50px;
+}
+
+/* How It Works Section */
+.how-it-works {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.how-it-works h2 {
+    color: #12285e;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.how-it-works ol {
+    list-style-type: none;
+    counter-reset: step;
+    padding-left: 0;
+}
+
+.how-it-works li {
+    position: relative;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.how-it-works li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    background: #31cbd1;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    position: relative;
+    z-index: 1000;
+    transition: background-color 0.3s ease; /* Moved transition here for better organization */
+}
+
+.how-it-works li:last-child {
+    margin-bottom: 0;
+}
+
+.how-it-works p {
+    font-size: 1.1em;
+    color: #12285e;
+}
+
+/* Testimonials */
+.testimonial {
+    background-color: #fff;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px);
+}
+
+/* Footer */
+footer {
+    background-color: #12285e;
+    color: #fff;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Contact Form */
+.contact-form {
+    flex-basis: calc(50% - 20px);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h3 {
+    color: #12285e;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #ff6600;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+.contact-form input[type="submit"] {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #ff8533;
+}
+
+/* Contact Information */
+.contact-info {
+    flex-basis: calc(50% - 20px);
+    padding: 30px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    color: #12285e;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.contact-info p {
+    color: #555;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.contact-info strong {
+    color: #12285e;
+}
+
+/* Copyright */
+.copyright {
+    text-align: center;
+    margin-top: 50px;
+    color: #ccc;
+    font-size: 0.9em;
+}
