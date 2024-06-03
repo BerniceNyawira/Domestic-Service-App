@@ -61,19 +61,17 @@
             </ol>
         </div>
 
-        <!-- Testimonials Section -->
-        <div class="testimonials">
-            <h2>Testimonials</h2>
-            <div class="testimonial">
-                <p>Testimonial 1 content goes here.</p>
+        <!-- Terms and Conditions -->
+        <div class="terms-conditions">
+                <h2>Terms & Conditions</h2>
+                <p>By using our platform, you agree to the following terms and conditions:</p>
+                <ul>
+                    <li><strong>User Agreement:</strong> Both employers and domestic workers must adhere to our user agreement, which includes respectful communication, timely payments, and compliance with all relevant labor laws.</li>
+                    <li><strong>Approval Process:</strong> Requests for domestic workers are subject to approval. Both parties must agree to the terms before proceeding with the engagement.</li>
+                    <li><strong>Dispute Resolution:</strong> Any disputes that arise will be managed through our dispute resolution mechanism. Both parties are expected to participate in good faith to resolve issues.</li>
+                    <li><strong>Termination:</strong> We reserve the right to terminate accounts that violate our terms and conditions or engage in any form of misconduct.</li>
+                </ul>
             </div>
-            <div class="testimonial">
-                <p>Testimonial 2 content goes here.</p>
-            </div>
-            <div class="testimonial">
-                <p>Testimonial 3 content goes here.</p>
-            </div>
-        </div>
     </div>
 
     <!-- Footer Section -->
