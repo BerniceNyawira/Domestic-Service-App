@@ -22,7 +22,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Hire</a></li>
             <li><a href="#">Dispute Resolution</a></li>
-            <li><a href="{{ route('register.index') }}">Sign Up</a></li>
+            <li><a href="{{ route('register.newuser') }}">Sign Up</a></li>
             <li><a href="#">Login</a></li>
         </ul>
     </nav>

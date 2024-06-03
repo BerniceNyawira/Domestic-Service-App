@@ -14,4 +14,5 @@ Route::get('/', function () {
 });
 
 //route for the register page
-Route::resource('register', RegisterController::class);
+Route::get('register/newuser', [RegisterController::class, 'create'])->name('register.newuser');
+Route::post('register', [RegisterController::class, 'store'])->name('register');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
@@ -20,7 +21,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('Register.create');
+        return view('register.create');
     }
 
     /**
@@ -28,7 +29,25 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate
+        $request -> validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+
+        //create new user
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        //log the user in
+        auth()->login($user);
+
+        //redirect to desired page
+        return redirect()->route('user-home')->with('success', 'Registration successful!');
     }
 
     /**
