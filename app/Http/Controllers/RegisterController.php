@@ -41,13 +41,14 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'role' => 'employer',
         ]);
 
         //log the user in
         auth()->login($user);
 
         //redirect to desired page
-        return redirect()->route('user-home')->with('success', 'Registration successful!');
+        return redirect()->route('home')->with('success', 'Registration successful!');
     }
 
     /**
