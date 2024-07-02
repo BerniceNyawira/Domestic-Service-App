@@ -28,6 +28,28 @@
                 @enderror
             </div>
 
+             <!--Address-->
+             <div class="form-group">
+                <label for="address"> Address</label>
+                <input id="address" type="text" name="address" value="{{ old('address') }}" required>
+                @error('address')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
+            <!--phone-->
+            <div class="form-group">
+                <label for="address"> Phone Number </label>
+                <input id="phone" type="number" name="phone" value="{{ old('number') }}" required>
+                @error('number')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+
             <!--Password-->
             <div class="form-group">
                 <label for="password">Password</label>
@@ -45,6 +67,8 @@
                 <input id="password-confirm" type="password" name="password_confirmation" required
                     autocomplete="new-password">
             </div>
+
+
 
             <!--Submit-->
             <div class="form-group">

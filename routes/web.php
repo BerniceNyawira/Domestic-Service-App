@@ -24,3 +24,18 @@ Route::post('/login', [LoginController::class, 'login']);
 
 //logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+
+// routes/web.php
+
+use App\Http\Controllers\AdminController;
+
+Route::middleware(['auth', 'isAdmin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/admin/domestic-workers/create', [AdminController::class, 'createDomesticWorker'])->name('admin.domestic-workers.create');
+    Route::post('/admin/domestic-workers', [AdminController::class, 'storeDomesticWorker'])->name('admin.domestic-workers.store');
+    Route::get('/admin/requests', [AdminController::class, 'viewRequests'])->name('admin.requests.index');
+    Route::get('/admin/relationships', [AdminController::class, 'viewRelationships'])->name('admin.relationships.index');
+    Route::get('/admin/disputes', [AdminController::class, 'viewDisputes'])->name('admin.disputes.index');
+});
+
