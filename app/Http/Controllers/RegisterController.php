@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -42,6 +43,21 @@ class RegisterController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role' => 'employer',
+        ]);
+
+        Employer::create([
+            'user_id' => $user->id,
+            'f_name' => '', // You can update this later
+            'l_name' => '', // You can update this later
+            'address' => '', // You can update this later
+            'date_of_birth' => null, // You can update this later
+            'telephone_no' => '', // You can update this later
+            'gender' => '', // You can update this later
+            'size_of_homestead' => '', // You can update this later
+            'married' => '', // You can update this later
+            'children' => '', // You can update this later
+            'ages_of_children' => '', // You can update this later
+            'preferred_skills' => '', // You can update this later
         ]);
         
         //log the user in
