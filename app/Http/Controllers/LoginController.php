@@ -17,17 +17,25 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials)) {
-            //successful
-            return redirect()->intended('/dashboard');
+            //check if the user is an employer
+            if(Auth::user()->role == 'employer'){
+                return redirect()->route('employer.dashboard');
+            }
+            
+            //check if user is admin
+            //check if user is domestic worker 
         }
+        
         //failed
         return back()->withInput()->withErrors(['email' => 'Invalid Credentials']);
     }
 
     //log out user 
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect('/login'); 
     }
 }

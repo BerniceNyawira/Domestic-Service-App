@@ -21,9 +21,22 @@ Route::post('/login', [LoginController::class, 'login']);
 //logout
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
-
-//admincontroller
+//Employer Routes 
+Route::middleware(['auth', 'employer'])->group(function(){
+    //show dashboard
+    Route::get('employer/dashboard', [EmployerController::class, 'showDashboard'])->name('employer.dashboard');
+    //updateprofile
+    Route::get('/employer/update-profile', [EmployerController::class, 'editProfile'])->name('employer.update.profile');
+    Route::post('/employer/update-profile', [EmployerController::class, 'updateProfile'])->name('employer.update.profile');
+    //find dw
+    Route::get('/employer/find-dw', [EmployerController::class, 'findDw'])->name('employer.find.dw');
+    //report disputes
+    Route::get('/employer/report-disputes', [EmployerController::class, 'reportDisputes'])->name('employer.report.disputes');
+    //view partnerships
+    Route::get('/employer/view-partnerships', [EmployerController::class, 'viewPartnerships'])->name('employer.view.partnerships');
+    //pending requests
+    Route::get('/employer/pending-requests', [EmployerController::class, 'pendingRequests'])->name('employer.pending.requests');
+});
 
 // routes/web.php
 

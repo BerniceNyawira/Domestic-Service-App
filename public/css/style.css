@@ -313,3 +313,150 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #ff8533;
 }
+
+.hidden {
+    display: none;
+}
+
+.menu-section {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.menu-item {
+    text-align: center;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+    transition: background-color 0.3s;
+}
+
+.circle:hover {
+    background-color: #2980b9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo img {
+    height: 50px;
+}
+
+nav .welcome-banner {
+    text-align: center;
+}
+
+nav .navigation-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav .navigation-links li {
+    display: inline;
+}
+
+nav .navigation-links li a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+footer .contact-info,
+footer .copyright {
+    margin: 0;
+}
+
+/* Form Styles */
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form .form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form .form-group input,
+form .form-group select,
+form .form-group button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+form .form-group button {
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form .form-group button:hover {
+    background-color: #555;
+}
+
+.error {
+    color: red;
+    font-size: 0.875em;
+}
+
+/* Menu Section */
+#menu-section {
+    background-color: #f9f9f9;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+#menu-section .menu-item {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#menu-section .menu-item a {
+    text-decoration: none;
+    color: #333;
+}
+
+#menu-section .menu-item a:hover {
+    text-decoration: underline;
+}

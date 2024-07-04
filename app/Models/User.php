@@ -23,7 +23,6 @@ class User extends Authenticatable
         'phone',
         'address',
         'password',
-        'is_admin',
     ];
 
     /**
@@ -45,4 +44,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'is_admin' => 'boolean',
     ];
+
+    //employer profile to be associated with the user
+    public function employer()
+    {
+        return $this->hasOne(Employer::class);
+    }
 }
