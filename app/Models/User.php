@@ -23,7 +23,6 @@ class User extends Authenticatable
         'phone',
         'address',
         'password',
-        'role',
     ];
 
     /**
@@ -43,6 +42,7 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'is_admin' => 'boolean',
     ];
 
     //employer profile to be associated with the user

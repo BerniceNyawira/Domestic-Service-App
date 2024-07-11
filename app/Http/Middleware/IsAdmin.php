@@ -2,9 +2,11 @@
 
 namespace App\Http\Middleware;
 
+
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Auth;
 
 class IsAdmin
 {
@@ -13,15 +15,12 @@ class IsAdmin
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): Response
     {
-        if (auth::check() && Auth::user()->is_admin) {
-            \Log::info('Admin user authenticated.');
+        if (Auth::check() && Auth::user()->is_admin) {
             return $next($request);
         }
-        \Log::info('Non-admin user attempted to access admin route.');
-        return redirect('/');
-    }
-    
 
+        return redirect('/'); // Redirect to home if not an admin
+    }
 }
