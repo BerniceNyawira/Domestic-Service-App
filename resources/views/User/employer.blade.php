@@ -2,10 +2,10 @@
 
 @section('content')
     <!-- Main Content-->
-        <div class="main-content">
+        <div class="dashboard-page">
             <h2>Employer Dashboard</h2>
             <!-- Menu Section -->
-            <div id="menu-section" class="menu-section hidden">
+            <div id="menu-section" class="dashboard-links">
                 <div class="menu-item">
                     <a href="{{ route('employer.update.profile') }}">
                         <div class="circle">Update Profile</div>
@@ -22,7 +22,7 @@
                     </a>
                 </div>
                 <div class="menu-item">
-                    <a href="{{ route('employer.report.disputes') }}">
+                    <a href="{{ route('dispute.create') }}">
                         <div class="circle">Report Disputes</div>
                     </a>
                 </div>

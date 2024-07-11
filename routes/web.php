@@ -46,6 +46,8 @@ Route::middleware(['auth', 'employer'])->group(function(){
 // routes/web.php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DisputeController;
+use App\Http\Controllers\DisputeResolutionController;
 
 Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
@@ -54,5 +56,19 @@ Route::middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/admin/requests', [AdminController::class, 'viewRequests'])->name('admin.requests.index');
     Route::get('/admin/relationships', [AdminController::class, 'viewRelationships'])->name('admin.relationships.index');
     Route::get('/admin/disputes', [AdminController::class, 'viewDisputes'])->name('admin.disputes.index');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dispute/create', [DisputeController::class, 'submitForm'])->name('dispute.create');
+    Route::post('/dispute/submit', [DisputeController::class, 'submit'])->name('dispute.submit');
+    Route::post('/dispute/submit', [DisputeController::class, 'submit'])->name('dispute.submit');
+    Route::get('/dispute/pending', [DisputeController::class, 'index'])->name('dispute.pending');
+    Route::get('/dispute/{id}', [DisputeController::class, 'show'])->name('dispute.details');
+    Route::post('/dispute/{id}/resolve', [DisputeResolutionController::class, 'store'])->middleware('admin')->name('dispute.resolve');
+});
+
+Route::middleware('employer')->group(function () {
+    Route::get('/disputes/pending', [DisputeController::class, 'pendingDisputes'])->name('dispute.pending');
+    Route::get('/dispute/{id}', [DisputeController::class, 'show'])->name('dispute.details');
 });
 
